@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIYS - Impulsión y Distribución de Agua</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Mega Menú */
+        .mega-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 40px;
+            z-index: 20;
+        }
+
+        /* Indicador de flecha */
+        .mega-menu::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent white transparent;
+        }
+
+        .menu-title {
+            border-bottom: 2px solid red;
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 5px;
+        }
+
+        .menu-link:hover {
+            color: #1D4ED8;
+            transition: 0.3s;
+        }
+
+        /* Mostrar el mega menú al hacer hover */
+        nav > ul > li:hover .mega-menu {
+            display: grid;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Barra de Navegación -->
+    <header class="bg-blue-700 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between p-4 relative">
+            <!-- Navegación Principal -->
+            <nav class="flex space-x-6 relative w-full justify-between items-center">
+                <ul class="flex space-x-6 text-sm font-semibold">
+                    <li><a href="#" class="hover:text-gray-300">EMPRESA</a></li>
+
+                    <!-- Productos con Mega Menú -->
+                    <li class="relative group">
+                        <a href="#" class="hover:text-gray-300">PRODUCTOS ▼</a>
+                        <div class="mega-menu grid grid-cols-4 gap-10">
+                            <!-- Columna 1 -->
+                            <div>
+                                <h3 class="font-bold menu-title">BOMBAS</h3>
+                                <ul class="mt-2 space-y-1">
+                                    <li><a href="#" class="menu-link">Periféricas</a></li>
+                                    <li><a href="#" class="menu-link">Centrífugas</a></li>
+                                    <li><a href="#" class="menu-link">Sumergible</a></li>
+                                    <li><a href="#" class="menu-link">Pozo</a></li>
+                                    <li><a href="#" class="menu-link">Normalizada / Eje Libre</a></li>
+                                    <li><a href="#" class="font-semibold text-blue-600">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 2 -->
+                            <div>
+                                <h3 class="font-bold menu-title">INSTRUMENTACIÓN Y CONTROL</h3>
+                                <ul class="mt-2 space-y-1">
+                                    <li><a href="#" class="menu-link">VDF</a></li>
+                                    <li><a href="#" class="menu-link">Controladores</a></li>
+                                    <li><a href="#" class="menu-link">Tableros</a></li>
+                                    <li><a href="#" class="menu-link">Protección</a></li>
+                                    <li><a href="#" class="menu-link">Accesorios Control</a></li>
+                                    <li><a href="#" class="font-semibold text-blue-600">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 3 -->
+                            <div>
+                                <h3 class="font-bold menu-title">MÁQUINAS Y HERRAMIENTAS</h3>
+                                <ul class="mt-2 space-y-1">
+                                    <li><a href="#" class="menu-link">Generadores</a></li>
+                                    <li><a href="#" class="menu-link">Motobomba</a></li>
+                                    <li><a href="#" class="menu-link">Compresor</a></li>
+                                    <li><a href="#" class="menu-link">Motor Eléctrico</a></li>
+                                    <li><a href="#" class="menu-link">Soldadoras</a></li>
+                                    <li><a href="#" class="font-semibold text-blue-600">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 4 -->
+                            <div>
+                                <h3 class="font-bold menu-title">RIEGO</h3>
+                                <ul class="mt-2 space-y-1">
+                                    <li><a href="#" class="menu-link">Jardinería</a></li>
+                                    <li><a href="#" class="menu-link">Programadores</a></li>
+                                    <li><a href="#" class="menu-link">Aspersores</a></li>
+                                    <li><a href="#" class="menu-link">Boquillas</a></li>
+                                    <li><a href="#" class="menu-link">Microaspersión</a></li>
+                                    <li><a href="#" class="font-semibold text-blue-600">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 5 -->
+                            <div>
+                                <h3 class="font-bold menu-title">VÁLVULAS</h3>
+                                <ul class="mt-2 space-y-1">
+                                    <li><a href="#" class="menu-link">Latón</a></li>
+                                    <li><a href="#" class="menu-link">Metal</a></li>
+                                    <li><a href="#" class="menu-link">PVC</a></li>
+                                    <li><a href="#" class="menu-link">Válvulas de Control</a></li>
+                                    <li><a href="#" class="font-semibold text-blue-600">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 6 -->
+                            <div>
+                                <h3 class="font-bold menu-title">FILTRADO Y DOSIFICADO</h3>
+                                <ul class="mt-2 space-y-1">
+                                    <li><a href="#" class="menu-link">Bombas Dosificación</a></li>
+                                    <li><a href="#" class="menu-link">Filtración</a></li>
+                                    <li><a href="#" class="menu-link">Ablandadores de Agua</a></li>
+                                    <li><a href="#" class="menu-link">Piscinas</a></li>
+                                    <li><a href="#" class="menu-link">Bombas de Piscina</a></li>
+                                    <li><a href="#" class="font-semibold text-blue-600">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <!-- Columna 7 -->
+                            <div>
+                                <h3 class="font-bold menu-title">SISTEMAS Y SERVICIOS</h3>
+                                <ul class="mt-2 space-y-1">
+                                    <li><a href="#" class="menu-link">Sistemas</a></li>
+                                    <li><a href="#" class="menu-link">Servicios</a></li>
+                                    <li><a href="#" class="font-semibold text-blue-600">Ver más</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li><a href="#" class="hover:text-gray-300">MERCADOS</a></li>
+                    <li><a href="#" class="hover:text-gray-300">DIVISIÓN INDUSTRIAL/MINERÍA</a></li>
+                    <li><a href="#" class="hover:text-gray-300">APLICACIONES</a></li>
+                    <li><a href="#" class="hover:text-gray-300">MARCAS</a></li>
+                </ul>
+
+                <!-- Logo a la Derecha -->
+                <a href="#"><img src="logo.png" alt="Logo APIYS" class="h-10"></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección de Bienvenida -->
+    <section class="bg-blue-100 py-16 text-center">
+        <h1 class="text-4xl font-bold text-blue-700">Soluciones Hidráulicas Integrales</h1>
+        <p class="mt-4 text-gray-700 text-lg">Distribución y sistemas de agua con tecnología de vanguardia.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-4">
+        © 2024 APIYS - Todos los derechos reservados.
+    </footer>
+</body>
+</html>

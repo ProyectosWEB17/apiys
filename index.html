@@ -71,20 +71,60 @@
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Barra de Navegación -->
-<header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
-        <a href="#"><img src="logo.png" alt="APIYS Logo" class="h-10"></a>
-        <nav class="flex space-x-6">
-            <a href="#inicio" class="hover:text-blue-500">Inicio</a>
-            <a href="#productos" class="hover:text-blue-500">Productos</a>
-            <a href="#mision" class="hover:text-blue-500">Misión</a>
-            <a href="#contacto" class="hover:text-blue-500">Contacto</a>
-            <a href="#" id="trabajos-btn" class="hover:text-blue-500">Últimos Trabajos</a>
-        </nav>
-    </div>
-</header>
+    <header class="navbar">
+        <div class="container">
+            <div class="max-w-7xl mx-auto flex items-center justify-start p-4">
+                <a href="#"><img src="logo.png" alt="APIYS Logo" class="h-12"></a>
+            </div>
+            <a href="#" class="logo">
+            <nav class="nav-links">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <div class="dropdown">
+                    <a href="#" id="productos-menu" class="nav-link">Productos ▼</a>
+                    <!-- Mega Menú -->
+                    <div class="mega-menu hidden" id="megaMenu">
+                        <div class="mega-menu-content">
+                            <div class="menu-column">
+                                <h3 class="menu-title">BOMBAS</h3>
+                                <ul>
+                                    <li><a href="#">Periféricas</a></li>
+                                    <li><a href="#">Centrífugas</a></li>
+                                    <li><a href="#">Sumergible</a></li>
+                                    <li><a href="#">Pozo</a></li>
+                                    <li><a href="#">Normalizada / Eje Libre</a></li>
+                                    <li><a href="#" class="ver-mas">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-column">
+                                <h3 class="menu-title">VÁLVULAS</h3>
+                                <ul>
+                                    <li><a href="#">Latón</a></li>
+                                    <li><a href="#">Metal</a></li>
+                                    <li><a href="#">PVC</a></li>
+                                    <li><a href="#">Válvulas de Control</a></li>
+                                    <li><a href="#" class="ver-mas">Ver más</a></li>
+                                </ul>
+                            </div>
+                            <div class="menu-column">
+                                <h3 class="menu-title">SISTEMAS Y SERVICIOS</h3>
+                                <ul>
+                                    <li><a href="#">Sistemas</a></li>
+                                    <li><a href="#">Servicios</a></li>
+                                    <li><a href="#" class="ver-mas">Ver más</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#mision" class="nav-link">Misión</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+                <a href="#" id="trabajos-btn" class="nav-link">Últimos Trabajos</a>
+            </nav>
+        </div>
+    </header>
+    
 
-<!-- Modal para Últimos Trabajos -->
+    <!-- Modal para Últimos Trabajos -->
 <div id="trabajos-modal" class="modal hidden">
     <div class="modal-content trabajos-content">
         <button class="trabajos-close-btn">&times;</button>

@@ -103,3 +103,33 @@ trabajosModal.addEventListener('click', (e) => {
         trabajosModal.classList.add('hidden');
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const productosMenu = document.getElementById('productos-menu');
+    const megaMenu = document.getElementById('megaMenu');
+
+    let isMenuPinned = false;
+
+    // Mostrar el menú al pasar el mouse
+    productosMenu.addEventListener('mouseover', () => {
+        if (!isMenuPinned) {
+            megaMenu.classList.add('show-menu');
+        }
+    });
+
+    // Fijar el menú al hacer clic
+    productosMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        isMenuPinned = !isMenuPinned;
+        megaMenu.classList.toggle('show-menu', isMenuPinned);
+    });
+
+    // Cerrar el menú al hacer clic fuera de él
+    document.addEventListener('click', (event) => {
+        if (!megaMenu.contains(event.target) && event.target !== productosMenu) {
+            if (isMenuPinned) {
+                isMenuPinned = false;
+                megaMenu.classList.remove('show-menu');
+            }
+        }
+    });
+});
