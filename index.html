@@ -3,235 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APIYS - Impulsión y Distribución de Agua</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estilo para el carrusel */
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            height: 400px;
-        }
-
-        .carousel img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .carousel img.active {
-            opacity: 1; /* Mayor visibilidad para la imagen activa */
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-            z-index: 1;
-        }
-
-        .prev-btn { left: 10px; }
-        .next-btn { right: 10px; }
-
-        .carousel-dots {
-            position: absolute;
-            bottom: 15px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-        }
-
-        .carousel-dots span {
-            width: 12px;
-            height: 12px;
-            background-color: #bbb;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .carousel-dots span.active {
-            background-color: #717171;
-        }
-    </style>
+    <title>Apiys - E-commerce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-100 text-gray-900">
 
-    <!-- Barra de Navegación -->
-    <header class="navbar">
-        <div class="container">
-            <div class="max-w-7xl mx-auto flex items-center justify-start p-4">
-                <a href="#"><img src="logo.png" alt="APIYS Logo" class="h-12"></a>
+    <!-- Cabecera -->
+    <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+            
+            <!-- Botón de menú hamburguesa y Logo -->
+            <div class="flex items-center space-x-4">
+                <button id="menu-toggle" class="focus:outline-none bg-blue-300 p-2 rounded-full">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+
+                <!-- Logo con enlace a la página principal -->
+                <a href="index.html">
+                    <img src="logo.png" alt="APIYS Logo" class="h-12">
+                </a>
             </div>
-            <a href="#" class="logo">
-            <nav class="nav-links">
-                <a href="#inicio" class="nav-link">Inicio</a>
-                <div class="dropdown">
-                    <a href="#" id="productos-menu" class="nav-link">Productos ▼</a>
-                    <!-- Mega Menú -->
-                    <div class="mega-menu hidden" id="megaMenu">
-                        <div class="mega-menu-content">
-                            <div class="menu-column">
-                                <h3 class="menu-title">BOMBAS</h3>
-                                <ul>
-                                    <li><a href="#">Periféricas</a></li>
-                                    <li><a href="#">Centrífugas</a></li>
-                                    <li><a href="#">Sumergible</a></li>
-                                    <li><a href="#">Pozo</a></li>
-                                    <li><a href="#">Normalizada / Eje Libre</a></li>
-                                    <li><a href="#" class="ver-mas">Ver más</a></li>
-                                </ul>
-                            </div>
-                            <div class="menu-column">
-                                <h3 class="menu-title">VÁLVULAS</h3>
-                                <ul>
-                                    <li><a href="#">Latón</a></li>
-                                    <li><a href="#">Metal</a></li>
-                                    <li><a href="#">PVC</a></li>
-                                    <li><a href="#">Válvulas de Control</a></li>
-                                    <li><a href="#" class="ver-mas">Ver más</a></li>
-                                </ul>
-                            </div>
-                            <div class="menu-column">
-                                <h3 class="menu-title">SISTEMAS Y SERVICIOS</h3>
-                                <ul>
-                                    <li><a href="#">Sistemas</a></li>
-                                    <li><a href="#">Servicios</a></li>
-                                    <li><a href="#" class="ver-mas">Ver más</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="#mision" class="nav-link">Misión</a>
-                <a href="#contacto" class="nav-link">Contacto</a>
-                <a href="#" id="trabajos-btn" class="nav-link">Últimos Trabajos</a>
-            </nav>
-        </div>
-    </header>
-    
 
-    <!-- Modal para Últimos Trabajos -->
-<div id="trabajos-modal" class="modal hidden">
-    <div class="modal-content trabajos-content">
-        <button class="trabajos-close-btn">&times;</button>
-        <h2 class="text-3xl font-bold text-center mb-4">Nuestros Últimos Trabajos</h2>
-        <div class="trabajos-gallery grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <img src="trabajo1.jpg" alt="Trabajo 1" class="trabajo-img rounded shadow-md">
-            <img src="trabajo2.jpg" alt="Trabajo 2" class="trabajo-img rounded shadow-md">
-            <img src="trabajo3.jpg" alt="Trabajo 3" class="trabajo-img rounded shadow-md">
+            <!-- Barra de búsqueda -->
+            <div class="hidden lg:flex flex-grow mx-12">
+                <input type="text" placeholder="Búsqueda de producto" class="w-full border border-gray-300 px-4 py-2 rounded-l-md focus:outline-none">
+                <button class="bg-blue-700 px-4 py-2 rounded-r-md">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Información de contacto -->
+            <div class="hidden lg:block text-right">
+                <p class="text-sm font-semibold">Cotiza tu proyecto</p>
+                <a href="mailto:contacto@apiys.cl" class="text-sm font-bold text-black hover:text-blue-600">contacto@apiys.cl</a> | 
+                <span class="text-sm font-bold">+56 9 7483 6386</span>
+            </div>
+        </div>
+
+        <!-- Menú lateral (oculto por defecto) -->
+<div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-blue-900 text-white transform -translate-x-full transition-transform">
+    <div class="p-6">
+        <button id="close-menu" class="text-white text-2xl font-bold">&times;</button>
+
+        <!-- Empresa -->
+        <div class="mt-6">
+            <h3 class="text-lg font-bold uppercase">Empresa</h3>
+            <ul class="mt-2 space-y-2 text-sm">
+                <li><a href="nosotros.html" class="block hover:text-gray-300">Nosotros</a></li>
+                <li><a href="politicas-garantia.html" class="block hover:text-gray-300">Garantía y devoluciones</a></li>
+                <li><a href="politicas-de-privacidad.html" class="block hover:text-gray-300">Política de Privacidad</a></li>
+                <li><a href="politicas-de-cookies.html" class="block hover:text-gray-300">Política de Cookies</a></li>
+            </ul>
+        </div>
+
+        <!-- Productos -->
+        <div class="mt-6">
+            <h3 class="text-lg font-bold uppercase"><a href="productos.html" class="hover:text-gray-300">Productos</a></h3>
+            <ul class="mt-2 space-y-2 text-sm pl-2">
+                <li class="font-semibold">Bombas</li>
+                <ul class="pl-4">
+                    <li><a href="productos.html?categoria=Bombas" class="block hover:text-gray-300">Periféricas</a></li>
+                    <li><a href="productos.html?categoria=Bombas" class="block hover:text-gray-300">Centrífugas</a></li>
+                    <li><a href="productos.html?categoria=Bombas" class="block hover:text-gray-300">Sumergibles</a></li>
+                    <li><a href="productos.html?categoria=Bombas" class="block hover:text-gray-300">Pozo</a></li>
+                </ul>
+
+                <li class="font-semibold mt-2">Instrumentación y Control</li>
+                <ul class="pl-4">
+                    <li><a href="productos.html?categoria=Instrumentacion" class="block hover:text-gray-300">VDF</a></li>
+                    <li><a href="productos.html?categoria=Instrumentacion" class="block hover:text-gray-300">Controladores</a></li>
+                    <li><a href="productos.html?categoria=Instrumentacion" class="block hover:text-gray-300">Tableros</a></li>
+                </ul>
+
+                <li class="font-semibold mt-2">Máquinas y Herramientas</li>
+                <ul class="pl-4">
+                    <li><a href="productos.html?categoria=Maquinas" class="block hover:text-gray-300">Generadores</a></li>
+                    <li><a href="productos.html?categoria=Maquinas" class="block hover:text-gray-300">Motobombas</a></li>
+                    <li><a href="productos.html?categoria=Maquinas" class="block hover:text-gray-300">Compresores</a></li>
+                </ul>
+            </ul>
         </div>
     </div>
 </div>
+    </header>
+
+    <!-- Ajustar el padding para que el contenido no quede tapado -->
+    <style>
+        body {
+            padding-top: 80px; /* Ajusta este valor según el tamaño de la cabecera */
+        }
+    </style>
+
+    <!-- JavaScript para abrir/cerrar menú -->
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.toggle("-translate-x-full");
+        });
+
+        document.getElementById("close-menu").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.add("-translate-x-full");
+        });
+    </script>
 
 
-    <!-- Sección de Inicio con Carrusel Mejorado -->
-    <section id="inicio" class="relative text-center py-12 bg-blue-100">
-        <div class="carousel">
-            <img src="ing2.jpg" class="active" alt="Imagen 1">
-            <img src="steel-pipelines-cables-plant(1).jpg" alt="Imagen 2">
-            <img src="steel-pipelines-cables-plant.jpg" alt="Imagen 3">
+    <!-- Banner con Carrusel de Fondo -->
+<section class="relative h-72 flex justify-center items-center border border-gray-400 mx-6 my-4 shadow-lg overflow-hidden">
+    <!-- Imágenes de fondo -->
+    <div class="absolute inset-0 w-full h-full bg-cover bg-center transition-all duration-1000" id="carousel-bg"></div>
+    
+    <!-- Capa de oscurecimiento para mejorar legibilidad -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-            <button class="carousel-btn prev-btn">&#10094;</button>
-            <button class="carousel-btn next-btn">&#10095;</button>
+    <!-- Contenido fijo sobre el carrusel -->
+    <div class="relative z-10 text-white text-center px-6">
+        <h2 class="text-3xl font-bold">Bienvenido a APIYS</h2>
+        <p class="text-lg">Encuentra soluciones industriales con la mejor calidad.</p>
+    </div>
+</section>
 
-            <div class="carousel-dots"></div>
-        </div>
+<script>
+    // Lista de imágenes para el carrusel
+    const images = [
+        'steel-pipelines-cables-plant.jpg',
+        'banner.jpg',
+        'steel-pipelines-cables-plant(1).jpg'
+    ];
+    
+    let currentIndex = 0;
+    const carouselBg = document.getElementById("carousel-bg");
 
-        <div class="absolute inset-0 flex flex-col justify-center items-center bg-black bg-opacity-40 text-white">
-            <h1 class="text-4xl font-bold text-blue-300">Soluciones Integrales para Impulsión y Distribución de Agua</h1>
-            <p class="mt-4 text-lg">Expertos en sistemas hidráulicos con soluciones eficientes adaptadas a tus necesidades.</p>
-        </div>
-    </section>
+    function changeBackground() {
+        carouselBg.style.backgroundImage = `url(${images[currentIndex]})`;
+        currentIndex = (currentIndex + 1) % images.length;
+    }
 
-    <!-- Sección de Productos Destacados -->
-    <section id="productos" class="max-w-7xl mx-auto py-12 text-center">
-        <h2 class="text-4xl font-bold text-blue-700 mb-6">Productos Destacados</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4" id="product-list">
-            <div class="bg-white shadow-xl rounded-lg p-6 product-card" data-title="JDWm 1B-N 30-4 kit Válvula de Pie" data-description="Válvula de pie de alta calidad para sistemas hidráulicos." data-image="jdwm_valvula.jpg">
-                <img src="jdwm_valvula.jpg" alt="JDWm 1B-N 30-4 kit Válvula de Pie" class="w-full h-60 object-cover rounded-md">
-                <h3 class="text-2xl font-semibold mt-4">JDWm 1B-N 30-4 kit Válvula de Pie</h3>
+    // Cambiar imagen cada 4 segundos
+    changeBackground();
+    setInterval(changeBackground, 4000);
+</script>
+
+    
+    <!-- Productos Destacados -->
+<section class="py-16 bg-white px-6">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8">Productos Destacados</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Producto 1: Bombas -->
+            <div class="bg-gray-100 p-6 text-center rounded-lg shadow">
+                <img src="slide_bombas.jpg" alt="Bombas" class="w-full h-40 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-4">Bombas para todo tipo de trabajos</h3>
+                <p class="text-gray-600">Sumergibles, Periféricas, De Pozo y más.</p>
+                <a href="productos.html" class="text-blue-600 font-semibold hover:underline mt-2 block">Ver más</a>
             </div>
 
-            <div class="bg-white shadow-xl rounded-lg p-6 product-card" data-title="VALV. BOLA LD DOB. AMER. HILO 1″" data-description="Válvula de bola de doble acción para uso industrial." data-image="product2.jpg">
-                <img src="product2.jpg" alt="VALV. BOLA LD DOB. AMER. HILO 1″" class="w-full h-60 object-cover rounded-md">
-                <h3 class="text-2xl font-semibold mt-4">VALV. BOLA LD DOB. AMER. HILO 1″</h3>
+            <!-- Producto 2: Generadores -->
+            <div class="bg-gray-100 p-6 text-center rounded-lg shadow">
+                <img src="slide_generadores.jpg" alt="Generadores" class="w-full h-40 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-4">Energía confiable cuando más la necesitas</h3>
+                <p class="text-gray-600">Descubre nuestros generadores de alta potencia.</p>
+                <a href="productos.html" class="text-blue-600 font-semibold hover:underline mt-2 block">Ver más</a>
+            </div>
+
+            <!-- Producto 3: Motobombas -->
+            <div class="bg-gray-100 p-6 text-center rounded-lg shadow">
+                <img src="slide_motobombas.jpg" alt="Motobombas" class="w-full h-40 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-4">Riego, drenaje y más</h3>
+                <p class="text-gray-600">Motobombas diseñadas para el campo, la industria y la construcción.</p>
+                <a href="productos.html" class="text-blue-600 font-semibold hover:underline mt-2 block">Ver más</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Modal para Detalles del Producto -->
-    <div id="product-modal" class="modal hidden">
-        <div class="modal-content">
-            <button class="product-close-btn">&times;</button>
-            <img id="modal-image" src="" alt="Producto" class="modal-image">
-            <h2 id="modal-title" class="text-3xl font-bold mt-4"></h2>
-            <p id="modal-description" class="mt-2 text-gray-700"></p>
+
+<footer class="bg-black text-white py-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-3 gap-8 px-6">
+        
+        <!-- Sección Empresa -->
+        <div>
+            <a href="index.html">
+                <img src="logo.png" alt="APIYS Logo" class="h-10 mb-4">
+            </a>
+            <h3 class="font-bold text-lg">Empresa</h3>
+            <ul class="text-gray-400 text-sm space-y-2 mt-2">
+                <li><a href="nosotros.html" class="hover:text-white">Nosotros</a></li>
+                <li><a href="politicas-garantia.html" class="hover:text-white">Políticas de garantía y devoluciones</a></li>
+                <li><a href="politicas-de-privacidad.html" class="hover:text-white">Políticas de Privacidad</a></li>
+                <li><a href="politicas-de-cookies.html" class="hover:text-white">Política de Cookies</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección Categorías -->
+        <div>
+            <h3 class="font-bold text-lg">Categorías</h3>
+            <ul class="text-gray-400 text-sm space-y-2 mt-2">
+                <li><a href="productos.html?categoria=Bombas" class="hover:text-white">Bombas</a></li>
+                <li><a href="productos.html?categoria=Valvulas" class="hover:text-white">Válvulas</a></li>
+                <li><a href="productos.html?categoria=Instrumentos" class="hover:text-white">Instrumentos y Control</a></li>
+                <li><a href="productos.html?categoria=Filtrado" class="hover:text-white">Filtrado y Dosificado</a></li>
+                <li><a href="productos.html?categoria=Maquinas" class="hover:text-white">Máquinas y Herramientas</a></li>
+                <li><a href="productos.html?categoria=Riego" class="hover:text-white">Riego</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección Contáctanos -->
+        <div>
+            <h3 class="font-bold text-lg">Contáctanos</h3>
+            <p class="text-gray-400 text-sm mt-2">Lunes a Viernes<br>8:30 a 18:00 hrs</p>
+            <a href="mailto:contacto@apiys.cl" class="block text-blue-400 hover:text-white text-sm mt-2">contacto@apiys.cl</a>
+            <p class="text-gray-400 text-sm mt-1">+56 9 7483 6386</p>
         </div>
     </div>
 
-    <!-- Sección Misión -->
-    <section id="mision" class="bg-gray-100 py-12 px-4 text-center slide-in-left">
-        <h2 class="text-3xl font-bold text-blue-700 mb-4">Misión</h2>
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-6">
-            <img src="ing1.png" alt="Misión APIYS" class="w-full md:w-1/2 rounded shadow-lg">
-            <p class="text-lg text-gray-700 md:w-1/2 text-justify">
-                Entendemos las necesidades cambiantes de nuestros clientes, ofreciendo soluciones integrales respaldadas por marcas líderes del mercado internacional. 
-                Nuestra visión es ser reconocidos como el mejor proveedor de soluciones hidráulicas, destacando siempre por nuestra excelencia y compromiso con la innovación 
-                y el desarrollo sostenible.
-            </p>
-        </div>
-    </section>
+    <!-- Logos de métodos de pago -->
+    <div class="mt-8 flex justify-center space-x-6">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/MercadoPago_Logo.svg/2560px-MercadoPago_Logo.svg.png" 
+             alt="Mercado Pago" class="h-8">
+        <img src="https://www.transbank.cl/public/img/home/webpay-logo.png" 
+             alt="Webpay" class="h-8">
+    </div>
+</footer>    
+    
+    <!-- JavaScript para el menú móvil -->
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.querySelector('nav');
 
-    <!-- Sección ¿Qué nos distingue? -->
-    <section id="distingue" class="bg-white py-12 px-4 text-center slide-in-left">
-        <h2 class="text-3xl font-bold text-blue-700 mb-4">¿Qué nos distingue?</h2>
-        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-6">
-            <div class="md:w-1/2 text-justify">
-                <p class="text-lg text-gray-700 mb-4">
-                Nos destacamos por nuestro enfoque integral, donde cada solución está diseñada para maximizar el rendimiento y minimizar los costos operativos.
-                Contamos con un equipo altamente calificado, capaz de responder de manera eficaz y oportuna a las necesidades específicas de nuestros clientes.
-                Nuestro expertise abarca no solo el campo de las bombas, sino también todos los equipos y soluciones que ofrecemos al mercado.
-                </p>
-            </div>
-            <img src="ing3.jpg" alt="Equipo APIYS" class="w-full md:w-1/2 rounded-lg shadow-xl">
-        </div>
-    </section>
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+    </script>
 
-
-    <!-- Sección Contacto -->
-    <section id="contacto" class="bg-gray-100 py-12 px-4 slide-in-right">
-        <h2 class="text-3xl font-bold text-blue-700 text-center mb-8">Contáctanos</h2>
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <img src="ing4.jpg" alt="Equipo de APIYS trabajando" class="rounded-lg shadow-xl w-full h-auto object-cover">
-            <form class="bg-white p-6 rounded-lg shadow-md space-y-4">
-                <input type="text" placeholder="Nombre" class="w-full p-3 border rounded-md" required>
-                <input type="email" placeholder="Correo Electrónico" class="w-full p-3 border rounded-md" required>
-                <input type="text" placeholder="Asunto" class="w-full p-3 border rounded-md" required>
-                <textarea placeholder="Tu mensaje (opcional)" rows="4" class="w-full p-3 border rounded-md"></textarea>
-                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700">Enviar</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white text-center py-4">
-        © 2024 APIYS - Todos los derechos reservados.
-    </footer>
-
-    <script src="app.js"></script>
 </body>
 </html>
