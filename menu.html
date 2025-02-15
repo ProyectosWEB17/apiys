@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="text-2xl font-bold text-blue-600">MiLogo</a>
+                </div>
+
+                <!-- Menú Normal -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Inicio</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Servicios</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Sobre Nosotros</a>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 transition">Contacto</a>
+                    <a href="#" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition">Regístrate</a>
+                </div>
+
+                <!-- Botón para el menú móvil -->
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="md:hidden hidden">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Inicio</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Servicios</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sobre Nosotros</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contacto</a>
+            <a href="#" class="block px-4 py-2 bg-blue-600 text-white text-center rounded-md mx-4 hover:bg-blue-700 transition">Regístrate</a>
+        </div>
+    </nav>
+
+    <script>
+        // Toggle del menú móvil
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

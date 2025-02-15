@@ -1,0 +1,50 @@
+ 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Apiys</title>
+</head>
+<body>
+    <h2>Resumen del Pedido</h2>
+    <div id="resumen-pedido"></div>
+
+    <button id="webpayBtn">Pagar con Webpay</button>
+    <button id="mercadoPagoBtn">Pagar con Mercado Pago</button>
+
+    <script>
+        // Obtener total desde el carrito de compras
+        const totalCompra = localStorage.getItem('totalCompra') || 0;
+
+        const pedido = {
+            orden_id: "ORD-" + Math.floor(Math.random() * 100000),
+            monto: totalCompra,
+            descripcion: "Compra en Apiys.cl"
+        };
+
+        document.getElementById('resumen-pedido').innerHTML = `
+            <p>Orden: ${pedido.orden_id}</p>
+            <p>Total a pagar: $${pedido.monto}</p>
+        `;
+
+        async function pagar(tipo) {
+            const response = await fetch(`/api/pagos/${tipo}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(pedido)
+            });
+
+            const data = await response.json();
+            if (data.url) {
+                window.location.href = data.url; // Redirige a la pasarela de pago
+            } else {
+                alert('Error al procesar el pago');
+            }
+        }
+
+        document.getElementById('webpayBtn').addEventListener('click', () => pagar('webpay'));
+        document.getElementById('mercadoPagoBtn').addEventListener('click', () => pagar('mercadopago'));
+    </script>
+</body>
+</html>

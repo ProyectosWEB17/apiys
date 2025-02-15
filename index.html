@@ -5,94 +5,260 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apiys - E-commerce</title>
     <script src="https://cdn.tailwindcss.com"></script>
+<style>
+
+</style>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
     <!-- Cabecera -->
-    <header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
-            
-            <!-- Botón de menú hamburguesa y Logo -->
-            <div class="flex items-center space-x-4">
-                <button id="menu-toggle" class="focus:outline-none bg-blue-300 p-2 rounded-full">
-                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
+<header class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+        
+        <!-- Botón de menú hamburguesa y Logo -->
+        <div class="flex items-center space-x-4">
+            <button id="menu-toggle" class="relative bg-blue-700 p-3 rounded-full shadow-lg hover:bg-blue-600 transition">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
 
-                <!-- Logo con enlace a la página principal -->
-                <a href="index.html">
-                    <img src="logo.png" alt="APIYS Logo" class="h-12">
-                </a>
-            </div>
+            <!-- Logo con enlace a la página principal -->
+            <a href="index.html">
+                <img src="logo.png" alt="APIYS Logo" class="h-12">
+            </a>
+        </div>
 
-            <!-- Barra de búsqueda -->
-            <div class="hidden lg:flex flex-grow mx-12">
-                <input type="text" placeholder="Búsqueda de producto" class="w-full border border-gray-300 px-4 py-2 rounded-l-md focus:outline-none">
-                <button class="bg-blue-700 px-4 py-2 rounded-r-md">
-                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"></path>
-                    </svg>
-                </button>
-            </div>
+        <!-- Barra de búsqueda -->
+        <div class="hidden lg:flex flex-grow mx-12">
+            <input type="text" placeholder="Búsqueda de producto" class="w-full border border-gray-300 px-4 py-2 rounded-l-md focus:outline-none">
+            <button class="bg-blue-700 px-4 py-2 rounded-r-md">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"></path>
+                </svg>
+            </button>
+        </div>
 
-            <!-- Información de contacto -->
+        <!-- Información de contacto y Carrito -->
+        <div class="flex items-center space-x-6">
             <div class="hidden lg:block text-right">
                 <p class="text-sm font-semibold">Cotiza tu proyecto</p>
                 <a href="mailto:contacto@apiys.cl" class="text-sm font-bold text-black hover:text-blue-600">contacto@apiys.cl</a> | 
                 <span class="text-sm font-bold">+56 9 7483 6386</span>
             </div>
-        </div>
 
-        <!-- Menú lateral (oculto por defecto) -->
-<div id="mobile-menu" class="fixed top-0 left-0 w-64 h-full bg-blue-900 text-white transform -translate-x-full transition-transform">
-    <div class="p-6">
-        <button id="close-menu" class="text-white text-2xl font-bold">&times;</button>
-
-        <!-- Empresa -->
-        <div class="mt-6">
-            <h3 class="text-lg font-bold uppercase">Empresa</h3>
-            <ul class="mt-2 space-y-2 text-sm">
-                <li><a href="nosotros.html" class="block hover:text-gray-300">Nosotros</a></li>
-                <li><a href="politicas-garantia.html" class="block hover:text-gray-300">Garantía y devoluciones</a></li>
-                <li><a href="politicas-de-privacidad.html" class="block hover:text-gray-300">Política de Privacidad</a></li>
-                <li><a href="politicas-de-cookies.html" class="block hover:text-gray-300">Política de Cookies</a></li>
-            </ul>
-        </div>
-
-        <!-- Productos -->
-        <div class="mt-6">
-            <h3 class="text-lg font-bold uppercase"><a href="productos.html" class="hover:text-gray-300">Productos</a></h3>
-            <ul class="mt-2 space-y-2 text-sm pl-2">
-                <li class="font-semibold">Bombas</li>
-                <ul class="pl-4">
-                    <li><a href="productos.html?categoria=Bombas" class="block hover:text-gray-300">Periféricas</a></li>
-                    <li><a href="productos.html?categoria=Bombas" class="block hover:text-gray-300">Centrífugas</a></li>
-                    <li><a href="productos.html?categoria=Bombas" class="block hover:text-gray-300">Sumergibles</a></li>
-                    <li><a href="productos.html?categoria=Bombas" class="block hover:text-gray-300">Pozo</a></li>
-                </ul>
-
-                <li class="font-semibold mt-2">Instrumentación y Control</li>
-                <ul class="pl-4">
-                    <li><a href="productos.html?categoria=Instrumentacion" class="block hover:text-gray-300">VDF</a></li>
-                    <li><a href="productos.html?categoria=Instrumentacion" class="block hover:text-gray-300">Controladores</a></li>
-                    <li><a href="productos.html?categoria=Instrumentacion" class="block hover:text-gray-300">Tableros</a></li>
-                </ul>
-
-                <li class="font-semibold mt-2">Máquinas y Herramientas</li>
-                <ul class="pl-4">
-                    <li><a href="productos.html?categoria=Maquinas" class="block hover:text-gray-300">Generadores</a></li>
-                    <li><a href="productos.html?categoria=Maquinas" class="block hover:text-gray-300">Motobombas</a></li>
-                    <li><a href="productos.html?categoria=Maquinas" class="block hover:text-gray-300">Compresores</a></li>
-                </ul>
-            </ul>
+            <!-- Carrito de compras -->
+            <div class="relative">
+                <button id="cart-button" class="relative bg-blue-700 p-3 rounded-full shadow-lg hover:bg-blue-600 transition">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l3 9h11l3-9h2"></path>
+                        <circle cx="9" cy="21" r="2"></circle>
+                        <circle cx="20" cy="21" r="2"></circle>
+                    </svg>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold w-5 h-5 flex justify-center items-center rounded-full hidden">0</span>
+                </button>
+            </div>
         </div>
     </div>
+</header>
+
+<!-- Menú lateral -->
+<div id="mobile-menu" class="fixed top-0 left-0 w-80 h-full bg-blue-900 text-white transform -translate-x-full transition-transform ease-in-out duration-300 z-50 shadow-lg">
+    <div class="p-6 relative">
+        <!-- Botón de Cerrar -->
+        <button id="close-menu" class="text-white text-2xl font-bold absolute top-4 right-4 hover:text-gray-300 transition">&times;</button>
+
+        <!-- Sección Empresa -->
+        <h3 class="text-lg font-bold uppercase border-b border-gray-600 pb-2">Empresa</h3>
+        <ul class="mt-2 space-y-2 text-sm">
+            <li><a href="nosotros.html" class="block hover:text-gray-300">Nosotros</a></li>
+            <li><a href="politicas-garantia.html" class="block hover:text-gray-300">Garantía y devoluciones</a></li>
+            <li><a href="politicas-de-privacidad.html" class="block hover:text-gray-300">Política de Privacidad</a></li>
+            <li><a href="politicas-de-cookies.html" class="block hover:text-gray-300">Política de Cookies</a></li>
+        </ul>
+
+        <!-- Sección Productos -->
+        <h3 class="text-lg font-bold uppercase mt-6 border-b border-gray-600 pb-2">
+            <a href="productos.html" class="hover:text-gray-300">Productos</a>
+        </h3>
+        <ul class="mt-2 space-y-2 text-sm">
+            <!-- Bombas -->
+            <li>
+                <button class="toggle-submenu flex justify-between w-full text-left hover:text-gray-300">
+                    Bombas <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="submenu hidden pl-4 text-gray-300">
+                    <li><a href="productos.html?categoria=Bombas&tipo=Perifericas" class="block hover:text-white">Periféricas</a></li>
+                    <li><a href="productos.html?categoria=Bombas&tipo=Centrifugas" class="block hover:text-white">Centrífugas</a></li>
+                    <li><a href="productos.html?categoria=Bombas&tipo=Sumergibles" class="block hover:text-white">Sumergible</a></li>
+                    <li><a href="productos.html?categoria=Bombas&tipo=Pozo" class="block hover:text-white">Pozo</a></li>
+                    <li><a href="productos.html?categoria=Bombas&tipo=Normalizada" class="block hover:text-white">Normalizada / Eje Libre</a></li>
+                </ul>
+            </li>
+
+            <!-- Instrumentación y Control -->
+            <li>
+                <button class="toggle-submenu flex justify-between w-full text-left hover:text-gray-300">
+                    Instrumentación y Control <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="submenu hidden pl-4 text-gray-300">
+                    <li><a href="productos.html?categoria=Instrumentacion&tipo=VDF" class="block hover:text-white">VDF</a></li>
+                    <li><a href="productos.html?categoria=Instrumentacion&tipo=Controladores" class="block hover:text-white">Controladores</a></li>
+                    <li><a href="productos.html?categoria=Instrumentacion&tipo=Tableros" class="block hover:text-white">Tableros</a></li>
+                    <li><a href="productos.html?categoria=Instrumentacion&tipo=Proteccion" class="block hover:text-white">Protección</a></li>
+                    <li><a href="productos.html?categoria=Instrumentacion&tipo=Accesorios" class="block hover:text-white">Accesorios Control</a></li>
+                </ul>
+            </li>
+
+            <!-- Máquinas y Herramientas -->
+            <li>
+                <button class="toggle-submenu flex justify-between w-full text-left hover:text-gray-300">
+                    Máquinas y Herramientas <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="submenu hidden pl-4 text-gray-300">
+                    <li><a href="productos.html?categoria=Maquinas&tipo=Generadores" class="block hover:text-white">Generadores</a></li>
+                    <li><a href="productos.html?categoria=Maquinas&tipo=Motobombas" class="block hover:text-white">Motobombas</a></li>
+                    <li><a href="productos.html?categoria=Maquinas&tipo=Compresores" class="block hover:text-white">Compresores</a></li>
+                    <li><a href="productos.html?categoria=Maquinas&tipo=MotorElectrico" class="block hover:text-white">Motor Eléctrico</a></li>
+                    <li><a href="productos.html?categoria=Maquinas&tipo=Soldadoras" class="block hover:text-white">Soldadoras</a></li>
+                </ul>
+            </li>
+
+            <!-- Riego -->
+            <li>
+                <button class="toggle-submenu flex justify-between w-full text-left hover:text-gray-300">
+                    Riego <span class="submenu-icon">▼</span>
+                </button>
+                <ul class="submenu hidden pl-4 text-gray-300">
+                    <li><a href="productos.html?categoria=Riego&tipo=Jardineria" class="block hover:text-white">Jardinería</a></li>
+                    <li><a href="productos.html?categoria=Riego&tipo=Programadores" class="block hover:text-white">Programadores</a></li>
+                    <li><a href="productos.html?categoria=Riego&tipo=Aspersores" class="block hover:text-white">Aspersores</a></li>
+                    <li><a href="productos.html?categoria=Riego&tipo=Boquillas" class="block hover:text-white">Boquillas</a></li>
+                    <li><a href="productos.html?categoria=Riego&tipo=Microaspersion" class="block hover:text-white">Microaspersión</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </div>
-    </header>
+
+<!-- Botón de menú hamburguesa -->
+<button id="menu-toggle" class="fixed top-4 left-4 bg-blue-700 p-3 rounded-full shadow-lg hover:bg-blue-600 transition">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+    </svg>
+</button>
+
+<!-- Ventana emergente del carrito -->
+<div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden z-50">
+    <div class="bg-white w-96 p-6 rounded-lg shadow-lg relative">
+        <button id="close-cart" class="absolute top-2 right-2 text-red-500 text-2xl font-bold">&times;</button>
+        <h2 class="text-xl font-semibold mb-4">Carrito de Compras</h2>
+        <ul id="cart-items" class="space-y-2">
+            <li class="text-gray-500">El carrito está vacío</li>
+        </ul>
+        <div class="mt-4 flex justify-between items-center">
+            <span class="text-lg font-bold" id="cart-total">$0</span>
+        </div>
+        <button id="checkout-button" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md w-full">Finalizar Pago</button>
+    </div>
+</div>
+
+<!-- Script para el Menú -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const closeMenu = document.getElementById("close-menu");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const submenuButtons = document.querySelectorAll(".toggle-submenu");
+
+        // Abre y cierra el menú lateral
+        menuToggle.addEventListener("click", function () {
+            mobileMenu.classList.remove("-translate-x-full");
+        });
+
+        closeMenu.addEventListener("click", function () {
+            mobileMenu.classList.add("-translate-x-full");
+        });
+
+        // Submenús desplegables con icono dinámico
+        submenuButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const submenu = this.nextElementSibling;
+                const icon = this.querySelector(".submenu-icon");
+
+                submenu.classList.toggle("hidden");
+                icon.textContent = submenu.classList.contains("hidden") ? "▼" : "▲";
+            });
+        });
+    });
+</script>
+
+<!-- Script para el Carrito -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cartButton = document.getElementById("cart-button");
+        const closeCart = document.getElementById("close-cart");
+        const cartModal = document.getElementById("cart-modal");
+
+        cartButton.addEventListener("click", function () {
+            cartModal.classList.remove("hidden");
+        });
+
+        closeCart.addEventListener("click", function () {
+            cartModal.classList.add("hidden");
+        });
+
+        document.getElementById("checkout-button").addEventListener("click", function () {
+            window.location.href = "checkout.html";
+        });
+    });
+</script>
 
     <!-- Ajustar el padding para que el contenido no quede tapado -->
     <style>
+
+        /* 🔹 Botón del carrito */
+#cart-button {
+    background-color: #1e40af;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+#cart-button:hover {
+    background-color: #2563eb;
+}
+
+/* 🔹 Mini carrito bien alineado */
+#cart-dropdown {
+    width: 250px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    display: none;
+}
+
+/* 🔹 Ajuste del contador del carrito */
+#cart-count {
+    background-color: red;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+
         body {
             padding-top: 80px; /* Ajusta este valor según el tamaño de la cabecera */
         }
@@ -182,12 +348,12 @@
 
 
 <footer class="bg-black text-white py-10">
-    <div class="max-w-7xl mx-auto grid grid-cols-3 gap-8 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6 text-center md:text-left">
         
         <!-- Sección Empresa -->
         <div>
             <a href="index.html">
-                <img src="logo.png" alt="APIYS Logo" class="h-10 mb-4">
+                <img src="logo.png" alt="APIYS Logo" class="h-12 mb-4 mx-auto md:mx-0">
             </a>
             <h3 class="font-bold text-lg">Empresa</h3>
             <ul class="text-gray-400 text-sm space-y-2 mt-2">
@@ -221,23 +387,15 @@
     </div>
 
     <!-- Logos de métodos de pago -->
-    <div class="mt-8 flex justify-center space-x-6">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/MercadoPago_Logo.svg/2560px-MercadoPago_Logo.svg.png" 
-             alt="Mercado Pago" class="h-8">
-        <img src="https://www.transbank.cl/public/img/home/webpay-logo.png" 
-             alt="Webpay" class="h-8">
+    <div class="mt-8 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+        <img src="mercadopagologo.jpg" alt="Mercado Pago" class="h-16 md:h-12">
+        <div class="bg-white p-2 rounded-md">
+            <img src="webpay-aritosdebebe.png" alt="Webpay" class="h-16 md:h-12">
+        </div>
     </div>
-</footer>    
-    
-    <!-- JavaScript para el menú móvil -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navMenu = document.querySelector('nav');
+</footer>  
 
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('hidden');
-        });
-    </script>
+  
 
 </body>
 </html>
